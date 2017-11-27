@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<h1>Spring Boot - 파일업로드 - AJAX</h1>
+
+<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+    <input type="text" name="extraField"/><br/><br/>
+    <input type="file" name="files"/><br/><br/>
+    <!-- <input type="file" name="files"/><br/><br/> -->
+    <input type="submit" value="Submit" id="btnSubmit"/>
+</form>
+
+<h1>결과</h1>
+<pre>
+    <span id="result"></span>
+</pre>
+
+
+</body>
+</html>

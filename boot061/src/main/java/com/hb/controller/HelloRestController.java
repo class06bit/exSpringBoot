@@ -30,6 +30,7 @@ public class HelloRestController {
 	public List<GuestVo> list(Model model){
 		return dao.findAll();
 	}
+	
 }
 
 

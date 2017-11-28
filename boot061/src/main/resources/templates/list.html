@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Spring Boot Thymeleaf Hello World Example</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -9,15 +9,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<nav class="navbar">
+	<nav class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Spring Boot</a>
+				<a class="navbar-brand" href="/">Spring Boot</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="/">Home</a></li>
 					<li><a href="#about">About</a></li>
+					<li><a href="add">add</a></li>
 				</ul>
 			</div>
 		</div>
@@ -26,14 +27,22 @@
 	<div class="container">
 
 		<div class="starter-template">
-			<h1>hello test</h1>
+			<h1>List page</h1>
 			<ul>
-				<li><a href="hello">hello</a></li>
-				<li><a href="console">console</a></li>
-				<li><a href="list">list</a></li>
-				<li><a href="add">add</a></li>
+				<li th:each="data:${list}" >
+				<span th:text="${data.sabun}" />
+				<span th:text="${data.name}" />
+				<span th:text="${#dates.format(data.nalja, 'dd/MMM/yyyy HH:mm')}" />
+				<span th:text="${#numbers.formatInteger(data.pay,3,'POINT')}" />
+				</li>
 			</ul>
 		</div>
+
 	</div>
+	<!-- /.container -->
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
